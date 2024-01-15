@@ -20,11 +20,11 @@ namespace secretary {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("secretaryDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("secretaryDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class secretaryDataSet : global::System.Data.DataSet {
+    public partial class secretaryDataSet1 : global::System.Data.DataSet {
         
-        private incorrectDataTable tableincorrect;
+        private incorectDataTable tableincorect;
         
         private receivedDataTable tablereceived;
         
@@ -32,7 +32,7 @@ namespace secretary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public secretaryDataSet() {
+        public secretaryDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace secretary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected secretaryDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected secretaryDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,8 +56,8 @@ namespace secretary {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["incorrect"] != null)) {
-                    base.Tables.Add(new incorrectDataTable(ds.Tables["incorrect"]));
+                if ((ds.Tables["incorect"] != null)) {
+                    base.Tables.Add(new incorectDataTable(ds.Tables["incorect"]));
                 }
                 if ((ds.Tables["received"] != null)) {
                     base.Tables.Add(new receivedDataTable(ds.Tables["received"]));
@@ -84,9 +84,9 @@ namespace secretary {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public incorrectDataTable incorrect {
+        public incorectDataTable incorect {
             get {
-                return this.tableincorrect;
+                return this.tableincorect;
             }
         }
         
@@ -142,7 +142,7 @@ namespace secretary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            secretaryDataSet cln = ((secretaryDataSet)(base.Clone()));
+            secretaryDataSet1 cln = ((secretaryDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,8 +167,8 @@ namespace secretary {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["incorrect"] != null)) {
-                    base.Tables.Add(new incorrectDataTable(ds.Tables["incorrect"]));
+                if ((ds.Tables["incorect"] != null)) {
+                    base.Tables.Add(new incorectDataTable(ds.Tables["incorect"]));
                 }
                 if ((ds.Tables["received"] != null)) {
                     base.Tables.Add(new receivedDataTable(ds.Tables["received"]));
@@ -206,10 +206,10 @@ namespace secretary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableincorrect = ((incorrectDataTable)(base.Tables["incorrect"]));
+            this.tableincorect = ((incorectDataTable)(base.Tables["incorect"]));
             if ((initTable == true)) {
-                if ((this.tableincorrect != null)) {
-                    this.tableincorrect.InitVars();
+                if ((this.tableincorect != null)) {
+                    this.tableincorect.InitVars();
                 }
             }
             this.tablereceived = ((receivedDataTable)(base.Tables["received"]));
@@ -223,20 +223,20 @@ namespace secretary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "secretaryDataSet";
+            this.DataSetName = "secretaryDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/secretaryDataSet.xsd";
+            this.Namespace = "http://tempuri.org/secretaryDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableincorrect = new incorrectDataTable();
-            base.Tables.Add(this.tableincorrect);
+            this.tableincorect = new incorectDataTable();
+            base.Tables.Add(this.tableincorect);
             this.tablereceived = new receivedDataTable();
             base.Tables.Add(this.tablereceived);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeincorrect() {
+        private bool ShouldSerializeincorect() {
             return false;
         }
         
@@ -257,7 +257,7 @@ namespace secretary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            secretaryDataSet ds = new secretaryDataSet();
+            secretaryDataSet1 ds = new secretaryDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,7 +302,7 @@ namespace secretary {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void incorrectRowChangeEventHandler(object sender, incorrectRowChangeEvent e);
+        public delegate void incorectRowChangeEventHandler(object sender, incorectRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void receivedRowChangeEventHandler(object sender, receivedRowChangeEvent e);
@@ -312,7 +312,7 @@ namespace secretary {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class incorrectDataTable : global::System.Data.TypedTableBase<incorrectRow> {
+        public partial class incorectDataTable : global::System.Data.TypedTableBase<incorectRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -354,8 +354,8 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectDataTable() {
-                this.TableName = "incorrect";
+            public incorectDataTable() {
+                this.TableName = "incorect";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -363,7 +363,7 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal incorrectDataTable(global::System.Data.DataTable table) {
+            internal incorectDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -380,7 +380,7 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected incorrectDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected incorectDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -548,33 +548,33 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectRow this[int index] {
+            public incorectRow this[int index] {
                 get {
-                    return ((incorrectRow)(this.Rows[index]));
+                    return ((incorectRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event incorrectRowChangeEventHandler incorrectRowChanging;
+            public event incorectRowChangeEventHandler incorectRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event incorrectRowChangeEventHandler incorrectRowChanged;
+            public event incorectRowChangeEventHandler incorectRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event incorrectRowChangeEventHandler incorrectRowDeleting;
+            public event incorectRowChangeEventHandler incorectRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event incorrectRowChangeEventHandler incorrectRowDeleted;
+            public event incorectRowChangeEventHandler incorectRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddincorrectRow(incorrectRow row) {
+            public void AddincorectRow(incorectRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectRow AddincorrectRow(
+            public incorectRow AddincorectRow(
                         string login_account, 
                         string password_account, 
                         bool license, 
@@ -593,7 +593,7 @@ namespace secretary {
                         string specialization_2, 
                         string specialization_3, 
                         string note) {
-                incorrectRow rowincorrectRow = ((incorrectRow)(this.NewRow()));
+                incorectRow rowincorectRow = ((incorectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         login_account,
@@ -614,15 +614,15 @@ namespace secretary {
                         specialization_2,
                         specialization_3,
                         note};
-                rowincorrectRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowincorrectRow);
-                return rowincorrectRow;
+                rowincorectRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowincorectRow);
+                return rowincorectRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                incorrectDataTable cln = ((incorrectDataTable)(base.Clone()));
+                incorectDataTable cln = ((incorectDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -630,7 +630,7 @@ namespace secretary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new incorrectDataTable();
+                return new incorectDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -703,29 +703,20 @@ namespace secretary {
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
-                this.columnlogin_account.AllowDBNull = false;
                 this.columnlogin_account.MaxLength = 250;
-                this.columnpassword_account.AllowDBNull = false;
                 this.columnpassword_account.MaxLength = 250;
-                this.columnlicense.AllowDBNull = false;
                 this.columnFIO.AllowDBNull = false;
                 this.columnFIO.MaxLength = 250;
-                this.columndate_creation.AllowDBNull = false;
-                this.columnapplication_status.AllowDBNull = false;
                 this.columnapplication_status.MaxLength = 50;
                 this.columnpassport.AllowDBNull = false;
                 this.columnpassport.MaxLength = 50;
-                this.columnFIO_mom.AllowDBNull = false;
                 this.columnFIO_mom.MaxLength = 250;
-                this.columnFIO_ded.AllowDBNull = false;
                 this.columnFIO_ded.MaxLength = 250;
                 this.columnINN.AllowDBNull = false;
                 this.columnsnils.AllowDBNull = false;
                 this.columnscore.AllowDBNull = false;
                 this.columnscore.MaxLength = 50;
-                this.columnphoto_certificate.AllowDBNull = false;
                 this.columnphoto_certificate.MaxLength = 250;
-                this.columnphoto.AllowDBNull = false;
                 this.columnphoto.MaxLength = 250;
                 this.columnspecialization_1.AllowDBNull = false;
                 this.columnspecialization_1.MaxLength = 250;
@@ -733,34 +724,33 @@ namespace secretary {
                 this.columnspecialization_2.MaxLength = 250;
                 this.columnspecialization_3.AllowDBNull = false;
                 this.columnspecialization_3.MaxLength = 250;
-                this.columnnote.AllowDBNull = false;
                 this.columnnote.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectRow NewincorrectRow() {
-                return ((incorrectRow)(this.NewRow()));
+            public incorectRow NewincorectRow() {
+                return ((incorectRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new incorrectRow(builder);
+                return new incorectRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(incorrectRow);
+                return typeof(incorectRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.incorrectRowChanged != null)) {
-                    this.incorrectRowChanged(this, new incorrectRowChangeEvent(((incorrectRow)(e.Row)), e.Action));
+                if ((this.incorectRowChanged != null)) {
+                    this.incorectRowChanged(this, new incorectRowChangeEvent(((incorectRow)(e.Row)), e.Action));
                 }
             }
             
@@ -768,8 +758,8 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.incorrectRowChanging != null)) {
-                    this.incorrectRowChanging(this, new incorrectRowChangeEvent(((incorrectRow)(e.Row)), e.Action));
+                if ((this.incorectRowChanging != null)) {
+                    this.incorectRowChanging(this, new incorectRowChangeEvent(((incorectRow)(e.Row)), e.Action));
                 }
             }
             
@@ -777,8 +767,8 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.incorrectRowDeleted != null)) {
-                    this.incorrectRowDeleted(this, new incorrectRowChangeEvent(((incorrectRow)(e.Row)), e.Action));
+                if ((this.incorectRowDeleted != null)) {
+                    this.incorectRowDeleted(this, new incorectRowChangeEvent(((incorectRow)(e.Row)), e.Action));
                 }
             }
             
@@ -786,14 +776,14 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.incorrectRowDeleting != null)) {
-                    this.incorrectRowDeleting(this, new incorrectRowChangeEvent(((incorrectRow)(e.Row)), e.Action));
+                if ((this.incorectRowDeleting != null)) {
+                    this.incorectRowDeleting(this, new incorectRowChangeEvent(((incorectRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveincorrectRow(incorrectRow row) {
+            public void RemoveincorectRow(incorectRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -802,7 +792,7 @@ namespace secretary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                secretaryDataSet ds = new secretaryDataSet();
+                secretaryDataSet1 ds = new secretaryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -820,7 +810,7 @@ namespace secretary {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "incorrectDataTable";
+                attribute2.FixedValue = "incorectDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1261,25 +1251,18 @@ namespace secretary {
                 this.columnlogin_account.MaxLength = 250;
                 this.columnpassword_account.AllowDBNull = false;
                 this.columnpassword_account.MaxLength = 250;
-                this.columnlicense.AllowDBNull = false;
                 this.columnFIO.AllowDBNull = false;
                 this.columnFIO.MaxLength = 250;
-                this.columndate_creation.AllowDBNull = false;
-                this.columnapplication_status.AllowDBNull = false;
                 this.columnapplication_status.MaxLength = 50;
                 this.columnpassport.AllowDBNull = false;
                 this.columnpassport.MaxLength = 50;
-                this.columnFIO_mom.AllowDBNull = false;
                 this.columnFIO_mom.MaxLength = 250;
-                this.columnFIO_ded.AllowDBNull = false;
                 this.columnFIO_ded.MaxLength = 250;
                 this.columnINN.AllowDBNull = false;
                 this.columnsnils.AllowDBNull = false;
                 this.columnscore.AllowDBNull = false;
                 this.columnscore.MaxLength = 50;
-                this.columnphoto_certificate.AllowDBNull = false;
                 this.columnphoto_certificate.MaxLength = 250;
-                this.columnphoto.AllowDBNull = false;
                 this.columnphoto.MaxLength = 250;
                 this.columnspecialization_1.AllowDBNull = false;
                 this.columnspecialization_1.MaxLength = 250;
@@ -1287,7 +1270,6 @@ namespace secretary {
                 this.columnspecialization_2.MaxLength = 250;
                 this.columnspecialization_3.AllowDBNull = false;
                 this.columnspecialization_3.MaxLength = 250;
-                this.columnnote.AllowDBNull = false;
                 this.columnnote.MaxLength = 250;
             }
             
@@ -1356,7 +1338,7 @@ namespace secretary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                secretaryDataSet ds = new secretaryDataSet();
+                secretaryDataSet1 ds = new secretaryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1418,25 +1400,25 @@ namespace secretary {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class incorrectRow : global::System.Data.DataRow {
+        public partial class incorectRow : global::System.Data.DataRow {
             
-            private incorrectDataTable tableincorrect;
+            private incorectDataTable tableincorect;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal incorrectRow(global::System.Data.DataRowBuilder rb) : 
+            internal incorectRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableincorrect = ((incorrectDataTable)(this.Table));
+                this.tableincorect = ((incorectDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableincorrect.idColumn]));
+                    return ((int)(this[this.tableincorect.idColumn]));
                 }
                 set {
-                    this[this.tableincorrect.idColumn] = value;
+                    this[this.tableincorect.idColumn] = value;
                 }
             }
             
@@ -1444,10 +1426,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string login_account {
                 get {
-                    return ((string)(this[this.tableincorrect.login_accountColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.login_accountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'login_account\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.login_accountColumn] = value;
+                    this[this.tableincorect.login_accountColumn] = value;
                 }
             }
             
@@ -1455,10 +1442,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string password_account {
                 get {
-                    return ((string)(this[this.tableincorrect.password_accountColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.password_accountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'password_account\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.password_accountColumn] = value;
+                    this[this.tableincorect.password_accountColumn] = value;
                 }
             }
             
@@ -1466,10 +1458,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool license {
                 get {
-                    return ((bool)(this[this.tableincorrect.licenseColumn]));
+                    try {
+                        return ((bool)(this[this.tableincorect.licenseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'license\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.licenseColumn] = value;
+                    this[this.tableincorect.licenseColumn] = value;
                 }
             }
             
@@ -1477,10 +1474,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string FIO {
                 get {
-                    return ((string)(this[this.tableincorrect.FIOColumn]));
+                    return ((string)(this[this.tableincorect.FIOColumn]));
                 }
                 set {
-                    this[this.tableincorrect.FIOColumn] = value;
+                    this[this.tableincorect.FIOColumn] = value;
                 }
             }
             
@@ -1488,10 +1485,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime date_creation {
                 get {
-                    return ((global::System.DateTime)(this[this.tableincorrect.date_creationColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableincorect.date_creationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'date_creation\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.date_creationColumn] = value;
+                    this[this.tableincorect.date_creationColumn] = value;
                 }
             }
             
@@ -1499,10 +1501,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string application_status {
                 get {
-                    return ((string)(this[this.tableincorrect.application_statusColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.application_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'application_status\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.application_statusColumn] = value;
+                    this[this.tableincorect.application_statusColumn] = value;
                 }
             }
             
@@ -1510,10 +1517,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string passport {
                 get {
-                    return ((string)(this[this.tableincorrect.passportColumn]));
+                    return ((string)(this[this.tableincorect.passportColumn]));
                 }
                 set {
-                    this[this.tableincorrect.passportColumn] = value;
+                    this[this.tableincorect.passportColumn] = value;
                 }
             }
             
@@ -1521,10 +1528,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string FIO_mom {
                 get {
-                    return ((string)(this[this.tableincorrect.FIO_momColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.FIO_momColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO_mom\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.FIO_momColumn] = value;
+                    this[this.tableincorect.FIO_momColumn] = value;
                 }
             }
             
@@ -1532,10 +1544,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string FIO_ded {
                 get {
-                    return ((string)(this[this.tableincorrect.FIO_dedColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.FIO_dedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO_ded\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.FIO_dedColumn] = value;
+                    this[this.tableincorect.FIO_dedColumn] = value;
                 }
             }
             
@@ -1543,10 +1560,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int INN {
                 get {
-                    return ((int)(this[this.tableincorrect.INNColumn]));
+                    return ((int)(this[this.tableincorect.INNColumn]));
                 }
                 set {
-                    this[this.tableincorrect.INNColumn] = value;
+                    this[this.tableincorect.INNColumn] = value;
                 }
             }
             
@@ -1554,10 +1571,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int snils {
                 get {
-                    return ((int)(this[this.tableincorrect.snilsColumn]));
+                    return ((int)(this[this.tableincorect.snilsColumn]));
                 }
                 set {
-                    this[this.tableincorrect.snilsColumn] = value;
+                    this[this.tableincorect.snilsColumn] = value;
                 }
             }
             
@@ -1565,10 +1582,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string score {
                 get {
-                    return ((string)(this[this.tableincorrect.scoreColumn]));
+                    return ((string)(this[this.tableincorect.scoreColumn]));
                 }
                 set {
-                    this[this.tableincorrect.scoreColumn] = value;
+                    this[this.tableincorect.scoreColumn] = value;
                 }
             }
             
@@ -1576,10 +1593,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string photo_certificate {
                 get {
-                    return ((string)(this[this.tableincorrect.photo_certificateColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.photo_certificateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'photo_certificate\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.photo_certificateColumn] = value;
+                    this[this.tableincorect.photo_certificateColumn] = value;
                 }
             }
             
@@ -1587,10 +1609,15 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string photo {
                 get {
-                    return ((string)(this[this.tableincorrect.photoColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.photoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'photo\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.photoColumn] = value;
+                    this[this.tableincorect.photoColumn] = value;
                 }
             }
             
@@ -1598,10 +1625,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string specialization_1 {
                 get {
-                    return ((string)(this[this.tableincorrect.specialization_1Column]));
+                    return ((string)(this[this.tableincorect.specialization_1Column]));
                 }
                 set {
-                    this[this.tableincorrect.specialization_1Column] = value;
+                    this[this.tableincorect.specialization_1Column] = value;
                 }
             }
             
@@ -1609,10 +1636,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string specialization_2 {
                 get {
-                    return ((string)(this[this.tableincorrect.specialization_2Column]));
+                    return ((string)(this[this.tableincorect.specialization_2Column]));
                 }
                 set {
-                    this[this.tableincorrect.specialization_2Column] = value;
+                    this[this.tableincorect.specialization_2Column] = value;
                 }
             }
             
@@ -1620,10 +1647,10 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string specialization_3 {
                 get {
-                    return ((string)(this[this.tableincorrect.specialization_3Column]));
+                    return ((string)(this[this.tableincorect.specialization_3Column]));
                 }
                 set {
-                    this[this.tableincorrect.specialization_3Column] = value;
+                    this[this.tableincorect.specialization_3Column] = value;
                 }
             }
             
@@ -1631,11 +1658,136 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string note {
                 get {
-                    return ((string)(this[this.tableincorrect.noteColumn]));
+                    try {
+                        return ((string)(this[this.tableincorect.noteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'note\' в таблице \'incorect\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableincorrect.noteColumn] = value;
+                    this[this.tableincorect.noteColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Islogin_accountNull() {
+                return this.IsNull(this.tableincorect.login_accountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setlogin_accountNull() {
+                this[this.tableincorect.login_accountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispassword_accountNull() {
+                return this.IsNull(this.tableincorect.password_accountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpassword_accountNull() {
+                this[this.tableincorect.password_accountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslicenseNull() {
+                return this.IsNull(this.tableincorect.licenseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlicenseNull() {
+                this[this.tableincorect.licenseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isdate_creationNull() {
+                return this.IsNull(this.tableincorect.date_creationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdate_creationNull() {
+                this[this.tableincorect.date_creationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isapplication_statusNull() {
+                return this.IsNull(this.tableincorect.application_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setapplication_statusNull() {
+                this[this.tableincorect.application_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIO_momNull() {
+                return this.IsNull(this.tableincorect.FIO_momColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIO_momNull() {
+                this[this.tableincorect.FIO_momColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIO_dedNull() {
+                return this.IsNull(this.tableincorect.FIO_dedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIO_dedNull() {
+                this[this.tableincorect.FIO_dedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isphoto_certificateNull() {
+                return this.IsNull(this.tableincorect.photo_certificateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setphoto_certificateNull() {
+                this[this.tableincorect.photo_certificateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsphotoNull() {
+                return this.IsNull(this.tableincorect.photoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetphotoNull() {
+                this[this.tableincorect.photoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnoteNull() {
+                return this.IsNull(this.tableincorect.noteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnoteNull() {
+                this[this.tableincorect.noteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1690,7 +1842,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool license {
                 get {
-                    return ((bool)(this[this.tablereceived.licenseColumn]));
+                    try {
+                        return ((bool)(this[this.tablereceived.licenseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'license\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.licenseColumn] = value;
@@ -1712,7 +1869,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime date_creation {
                 get {
-                    return ((global::System.DateTime)(this[this.tablereceived.date_creationColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablereceived.date_creationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'date_creation\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.date_creationColumn] = value;
@@ -1723,7 +1885,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string application_status {
                 get {
-                    return ((string)(this[this.tablereceived.application_statusColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.application_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'application_status\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.application_statusColumn] = value;
@@ -1745,7 +1912,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string FIO_mom {
                 get {
-                    return ((string)(this[this.tablereceived.FIO_momColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.FIO_momColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO_mom\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.FIO_momColumn] = value;
@@ -1756,7 +1928,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string FIO_ded {
                 get {
-                    return ((string)(this[this.tablereceived.FIO_dedColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.FIO_dedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FIO_ded\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.FIO_dedColumn] = value;
@@ -1800,7 +1977,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string photo_certificate {
                 get {
-                    return ((string)(this[this.tablereceived.photo_certificateColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.photo_certificateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'photo_certificate\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.photo_certificateColumn] = value;
@@ -1811,7 +1993,12 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string photo {
                 get {
-                    return ((string)(this[this.tablereceived.photoColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.photoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'photo\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.photoColumn] = value;
@@ -1855,11 +2042,112 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string note {
                 get {
-                    return ((string)(this[this.tablereceived.noteColumn]));
+                    try {
+                        return ((string)(this[this.tablereceived.noteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'note\' в таблице \'received\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablereceived.noteColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslicenseNull() {
+                return this.IsNull(this.tablereceived.licenseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlicenseNull() {
+                this[this.tablereceived.licenseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isdate_creationNull() {
+                return this.IsNull(this.tablereceived.date_creationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdate_creationNull() {
+                this[this.tablereceived.date_creationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isapplication_statusNull() {
+                return this.IsNull(this.tablereceived.application_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setapplication_statusNull() {
+                this[this.tablereceived.application_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIO_momNull() {
+                return this.IsNull(this.tablereceived.FIO_momColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIO_momNull() {
+                this[this.tablereceived.FIO_momColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFIO_dedNull() {
+                return this.IsNull(this.tablereceived.FIO_dedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFIO_dedNull() {
+                this[this.tablereceived.FIO_dedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isphoto_certificateNull() {
+                return this.IsNull(this.tablereceived.photo_certificateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setphoto_certificateNull() {
+                this[this.tablereceived.photo_certificateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsphotoNull() {
+                return this.IsNull(this.tablereceived.photoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetphotoNull() {
+                this[this.tablereceived.photoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnoteNull() {
+                return this.IsNull(this.tablereceived.noteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnoteNull() {
+                this[this.tablereceived.noteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1867,22 +2155,22 @@ namespace secretary {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class incorrectRowChangeEvent : global::System.EventArgs {
+        public class incorectRowChangeEvent : global::System.EventArgs {
             
-            private incorrectRow eventRow;
+            private incorectRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectRowChangeEvent(incorrectRow row, global::System.Data.DataRowAction action) {
+            public incorectRowChangeEvent(incorectRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public incorrectRow Row {
+            public incorectRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1932,7 +2220,7 @@ namespace secretary {
         }
     }
 }
-namespace secretary.secretaryDataSetTableAdapters {
+namespace secretary.secretaryDataSet1TableAdapters {
     
     
     /// <summary>
@@ -1944,7 +2232,7 @@ namespace secretary.secretaryDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class incorrectTableAdapter : global::System.ComponentModel.Component {
+    public partial class incorectTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1958,7 +2246,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public incorrectTableAdapter() {
+        public incorectTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2055,7 +2343,7 @@ namespace secretary.secretaryDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "incorrect";
+            tableMapping.DataSetTable = "incorect";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("login_account", "login_account");
             tableMapping.ColumnMappings.Add("password_account", "password_account");
@@ -2078,7 +2366,7 @@ namespace secretary.secretaryDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[incorrect] ([login_account], [password_account], [license], [FIO], [date_creation], [application_status], [passport], [FIO_mom], [FIO_ded], [INN], [snils], [score], [photo_certificate], [photo], [specialization_1], [specialization_2], [specialization_3], [note]) VALUES (@login_account, @password_account, @license, @FIO, @date_creation, @application_status, @passport, @FIO_mom, @FIO_ded, @INN, @snils, @score, @photo_certificate, @photo, @specialization_1, @specialization_2, @specialization_3, @note)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[incorect] ([login_account], [password_account], [license], [FIO], [date_creation], [application_status], [passport], [FIO_mom], [FIO_ded], [INN], [snils], [score], [photo_certificate], [photo], [specialization_1], [specialization_2], [specialization_3], [note]) VALUES (@login_account, @password_account, @license, @FIO, @date_creation, @application_status, @passport, @FIO_mom, @FIO_ded, @INN, @snils, @score, @photo_certificate, @photo, @specialization_1, @specialization_2, @specialization_3, @note)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login_account", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login_account", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password_account", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password_account", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2115,8 +2403,8 @@ namespace secretary.secretaryDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, login_account, password_account, license, FIO, date_creation, applicat" +
                 "ion_status, passport, FIO_mom, FIO_ded, INN, snils, score, photo_certificate, ph" +
-                "oto, specialization_1, specialization_2, specialization_3, note FROM dbo.incorre" +
-                "ct";
+                "oto, specialization_1, specialization_2, specialization_3, note FROM dbo.incorec" +
+                "t";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2124,7 +2412,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(secretaryDataSet.incorrectDataTable dataTable) {
+        public virtual int Fill(secretaryDataSet1.incorectDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2137,9 +2425,9 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual secretaryDataSet.incorrectDataTable GetData() {
+        public virtual secretaryDataSet1.incorectDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            secretaryDataSet.incorrectDataTable dataTable = new secretaryDataSet.incorrectDataTable();
+            secretaryDataSet1.incorectDataTable dataTable = new secretaryDataSet1.incorectDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2147,15 +2435,15 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(secretaryDataSet.incorrectDataTable dataTable) {
+        public virtual int Update(secretaryDataSet1.incorectDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(secretaryDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "incorrect");
+        public virtual int Update(secretaryDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "incorect");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2180,9 +2468,9 @@ namespace secretary.secretaryDataSetTableAdapters {
         public virtual int Insert(
                     string login_account, 
                     string password_account, 
-                    bool license, 
+                    global::System.Nullable<bool> license, 
                     string FIO, 
-                    System.DateTime date_creation, 
+                    global::System.Nullable<global::System.DateTime> date_creation, 
                     string application_status, 
                     string passport, 
                     string FIO_mom, 
@@ -2197,27 +2485,37 @@ namespace secretary.secretaryDataSetTableAdapters {
                     string specialization_3, 
                     string note) {
             if ((login_account == null)) {
-                throw new global::System.ArgumentNullException("login_account");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(login_account));
             }
             if ((password_account == null)) {
-                throw new global::System.ArgumentNullException("password_account");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(password_account));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(license));
+            if ((license.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(license.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((FIO == null)) {
                 throw new global::System.ArgumentNullException("FIO");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FIO));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(date_creation));
+            if ((date_creation.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(date_creation.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((application_status == null)) {
-                throw new global::System.ArgumentNullException("application_status");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(application_status));
@@ -2229,13 +2527,13 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(passport));
             }
             if ((FIO_mom == null)) {
-                throw new global::System.ArgumentNullException("FIO_mom");
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(FIO_mom));
             }
             if ((FIO_ded == null)) {
-                throw new global::System.ArgumentNullException("FIO_ded");
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(FIO_ded));
@@ -2249,13 +2547,13 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(score));
             }
             if ((photo_certificate == null)) {
-                throw new global::System.ArgumentNullException("photo_certificate");
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = ((string)(photo_certificate));
             }
             if ((photo == null)) {
-                throw new global::System.ArgumentNullException("photo");
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(photo));
@@ -2279,7 +2577,7 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(specialization_3));
             }
             if ((note == null)) {
-                throw new global::System.ArgumentNullException("note");
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = ((string)(note));
@@ -2490,7 +2788,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(secretaryDataSet.receivedDataTable dataTable) {
+        public virtual int Fill(secretaryDataSet1.receivedDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2503,9 +2801,9 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual secretaryDataSet.receivedDataTable GetData() {
+        public virtual secretaryDataSet1.receivedDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            secretaryDataSet.receivedDataTable dataTable = new secretaryDataSet.receivedDataTable();
+            secretaryDataSet1.receivedDataTable dataTable = new secretaryDataSet1.receivedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2513,14 +2811,14 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(secretaryDataSet.receivedDataTable dataTable) {
+        public virtual int Update(secretaryDataSet1.receivedDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(secretaryDataSet dataSet) {
+        public virtual int Update(secretaryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "received");
         }
         
@@ -2546,9 +2844,9 @@ namespace secretary.secretaryDataSetTableAdapters {
         public virtual int Insert(
                     string login_account, 
                     string password_account, 
-                    bool license, 
+                    global::System.Nullable<bool> license, 
                     string FIO, 
-                    System.DateTime date_creation, 
+                    global::System.Nullable<global::System.DateTime> date_creation, 
                     string application_status, 
                     string passport, 
                     string FIO_mom, 
@@ -2574,16 +2872,26 @@ namespace secretary.secretaryDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(password_account));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(license));
+            if ((license.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(license.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((FIO == null)) {
                 throw new global::System.ArgumentNullException("FIO");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FIO));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(date_creation));
+            if ((date_creation.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(date_creation.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((application_status == null)) {
-                throw new global::System.ArgumentNullException("application_status");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(application_status));
@@ -2595,13 +2903,13 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(passport));
             }
             if ((FIO_mom == null)) {
-                throw new global::System.ArgumentNullException("FIO_mom");
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(FIO_mom));
             }
             if ((FIO_ded == null)) {
-                throw new global::System.ArgumentNullException("FIO_ded");
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(FIO_ded));
@@ -2615,13 +2923,13 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(score));
             }
             if ((photo_certificate == null)) {
-                throw new global::System.ArgumentNullException("photo_certificate");
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = ((string)(photo_certificate));
             }
             if ((photo == null)) {
-                throw new global::System.ArgumentNullException("photo");
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(photo));
@@ -2645,7 +2953,7 @@ namespace secretary.secretaryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(specialization_3));
             }
             if ((note == null)) {
-                throw new global::System.ArgumentNullException("note");
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = ((string)(note));
@@ -2679,7 +2987,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private incorrectTableAdapter _incorrectTableAdapter;
+        private incorectTableAdapter _incorectTableAdapter;
         
         private receivedTableAdapter _receivedTableAdapter;
         
@@ -2703,12 +3011,12 @@ namespace secretary.secretaryDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public incorrectTableAdapter incorrectTableAdapter {
+        public incorectTableAdapter incorectTableAdapter {
             get {
-                return this._incorrectTableAdapter;
+                return this._incorectTableAdapter;
             }
             set {
-                this._incorrectTableAdapter = value;
+                this._incorectTableAdapter = value;
             }
         }
         
@@ -2745,9 +3053,9 @@ namespace secretary.secretaryDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._incorrectTableAdapter != null) 
-                            && (this._incorrectTableAdapter.Connection != null))) {
-                    return this._incorrectTableAdapter.Connection;
+                if (((this._incorectTableAdapter != null) 
+                            && (this._incorectTableAdapter.Connection != null))) {
+                    return this._incorectTableAdapter.Connection;
                 }
                 if (((this._receivedTableAdapter != null) 
                             && (this._receivedTableAdapter.Connection != null))) {
@@ -2766,7 +3074,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._incorrectTableAdapter != null)) {
+                if ((this._incorectTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._receivedTableAdapter != null)) {
@@ -2781,14 +3089,14 @@ namespace secretary.secretaryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(secretaryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(secretaryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._incorrectTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.incorrect.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._incorectTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.incorect.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._incorrectTableAdapter.Update(updatedRows));
+                    result = (result + this._incorectTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2809,13 +3117,13 @@ namespace secretary.secretaryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(secretaryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(secretaryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._incorrectTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.incorrect.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._incorectTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.incorect.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._incorrectTableAdapter.Update(addedRows));
+                    result = (result + this._incorectTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2835,7 +3143,7 @@ namespace secretary.secretaryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(secretaryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(secretaryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._receivedTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.received.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2845,11 +3153,11 @@ namespace secretary.secretaryDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._incorrectTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.incorrect.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._incorectTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.incorect.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._incorrectTableAdapter.Update(deletedRows));
+                    result = (result + this._incorectTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2885,15 +3193,15 @@ namespace secretary.secretaryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(secretaryDataSet dataSet) {
+        public virtual int UpdateAll(secretaryDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._incorrectTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._incorrectTableAdapter.Connection) == false))) {
+            if (((this._incorectTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._incorectTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -2934,13 +3242,13 @@ namespace secretary.secretaryDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._incorrectTableAdapter != null)) {
-                    revertConnections.Add(this._incorrectTableAdapter, this._incorrectTableAdapter.Connection);
-                    this._incorrectTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._incorrectTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._incorrectTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._incorrectTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._incorrectTableAdapter.Adapter);
+                if ((this._incorectTableAdapter != null)) {
+                    revertConnections.Add(this._incorectTableAdapter, this._incorectTableAdapter.Connection);
+                    this._incorectTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._incorectTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._incorectTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._incorectTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._incorectTableAdapter.Adapter);
                     }
                 }
                 if ((this._receivedTableAdapter != null)) {
@@ -3010,9 +3318,9 @@ namespace secretary.secretaryDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._incorrectTableAdapter != null)) {
-                    this._incorrectTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._incorrectTableAdapter]));
-                    this._incorrectTableAdapter.Transaction = null;
+                if ((this._incorectTableAdapter != null)) {
+                    this._incorectTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._incorectTableAdapter]));
+                    this._incorectTableAdapter.Transaction = null;
                 }
                 if ((this._receivedTableAdapter != null)) {
                     this._receivedTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._receivedTableAdapter]));
