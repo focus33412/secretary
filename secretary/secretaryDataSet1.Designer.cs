@@ -32,6 +32,8 @@ namespace secretary {
         
         private global::System.Data.DataRelation relationFK__incorect__user_i__787EE5A0;
         
+        private global::System.Data.DataRelation relationFK__received__user_i__02FC7413;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -245,6 +247,7 @@ namespace secretary {
                 }
             }
             this.relationFK__incorect__user_i__787EE5A0 = this.Relations["FK__incorect__user_i__787EE5A0"];
+            this.relationFK__received__user_i__02FC7413 = this.Relations["FK__received__user_i__02FC7413"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -265,6 +268,10 @@ namespace secretary {
                         this.tableregister.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableincorect.user_idColumn}, false);
             this.Relations.Add(this.relationFK__incorect__user_i__787EE5A0);
+            this.relationFK__received__user_i__02FC7413 = new global::System.Data.DataRelation("FK__received__user_i__02FC7413", new global::System.Data.DataColumn[] {
+                        this.tableregister.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablereceived.user_idColumn}, false);
+            this.Relations.Add(this.relationFK__received__user_i__02FC7413);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -889,10 +896,6 @@ namespace secretary {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnlogin_account;
-            
-            private global::System.Data.DataColumn columnpassword_account;
-            
             private global::System.Data.DataColumn columnlicense;
             
             private global::System.Data.DataColumn columnFIO;
@@ -924,6 +927,8 @@ namespace secretary {
             private global::System.Data.DataColumn columnspecialization_3;
             
             private global::System.Data.DataColumn columnnote;
+            
+            private global::System.Data.DataColumn columnuser_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -963,22 +968,6 @@ namespace secretary {
             public global::System.Data.DataColumn idColumn {
                 get {
                     return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn login_accountColumn {
-                get {
-                    return this.columnlogin_account;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn password_accountColumn {
-                get {
-                    return this.columnpassword_account;
                 }
             }
             
@@ -1112,6 +1101,14 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn user_idColumn {
+                get {
+                    return this.columnuser_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1148,8 +1145,6 @@ namespace secretary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public receivedRow AddreceivedRow(
-                        string login_account, 
-                        string password_account, 
                         bool license, 
                         string FIO, 
                         System.DateTime date_creation, 
@@ -1165,12 +1160,11 @@ namespace secretary {
                         string specialization_1, 
                         string specialization_2, 
                         string specialization_3, 
-                        string note) {
+                        string note, 
+                        registerRow parentregisterRowByFK__received__user_i__02FC7413) {
                 receivedRow rowreceivedRow = ((receivedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        login_account,
-                        password_account,
                         license,
                         FIO,
                         date_creation,
@@ -1186,7 +1180,11 @@ namespace secretary {
                         specialization_1,
                         specialization_2,
                         specialization_3,
-                        note};
+                        note,
+                        null};
+                if ((parentregisterRowByFK__received__user_i__02FC7413 != null)) {
+                    columnValuesArray[17] = parentregisterRowByFK__received__user_i__02FC7413[0];
+                }
                 rowreceivedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowreceivedRow);
                 return rowreceivedRow;
@@ -1210,8 +1208,6 @@ namespace secretary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnlogin_account = base.Columns["login_account"];
-                this.columnpassword_account = base.Columns["password_account"];
                 this.columnlicense = base.Columns["license"];
                 this.columnFIO = base.Columns["FIO"];
                 this.columndate_creation = base.Columns["date_creation"];
@@ -1228,6 +1224,7 @@ namespace secretary {
                 this.columnspecialization_2 = base.Columns["specialization_2"];
                 this.columnspecialization_3 = base.Columns["specialization_3"];
                 this.columnnote = base.Columns["note"];
+                this.columnuser_id = base.Columns["user_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1235,10 +1232,6 @@ namespace secretary {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnlogin_account = new global::System.Data.DataColumn("login_account", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlogin_account);
-                this.columnpassword_account = new global::System.Data.DataColumn("password_account", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpassword_account);
                 this.columnlicense = new global::System.Data.DataColumn("license", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlicense);
                 this.columnFIO = new global::System.Data.DataColumn("FIO", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1271,15 +1264,13 @@ namespace secretary {
                 base.Columns.Add(this.columnspecialization_3);
                 this.columnnote = new global::System.Data.DataColumn("note", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnote);
+                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_id);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
-                this.columnlogin_account.AllowDBNull = false;
-                this.columnlogin_account.MaxLength = 250;
-                this.columnpassword_account.AllowDBNull = false;
-                this.columnpassword_account.MaxLength = 250;
                 this.columnFIO.AllowDBNull = false;
                 this.columnFIO.MaxLength = 250;
                 this.columnapplication_status.MaxLength = 50;
@@ -1300,6 +1291,7 @@ namespace secretary {
                 this.columnspecialization_3.AllowDBNull = false;
                 this.columnspecialization_3.MaxLength = 250;
                 this.columnnote.MaxLength = 250;
+                this.columnuser_id.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2107,28 +2099,6 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string login_account {
-                get {
-                    return ((string)(this[this.tablereceived.login_accountColumn]));
-                }
-                set {
-                    this[this.tablereceived.login_accountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string password_account {
-                get {
-                    return ((string)(this[this.tablereceived.password_accountColumn]));
-                }
-                set {
-                    this[this.tablereceived.password_accountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool license {
                 get {
                     try {
@@ -2345,6 +2315,28 @@ namespace secretary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int user_id {
+                get {
+                    return ((int)(this[this.tablereceived.user_idColumn]));
+                }
+                set {
+                    this[this.tablereceived.user_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public registerRow registerRow {
+                get {
+                    return ((registerRow)(this.GetParentRow(this.Table.ParentRelations["FK__received__user_i__02FC7413"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__received__user_i__02FC7413"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IslicenseNull() {
                 return this.IsNull(this.tablereceived.licenseColumn);
             }
@@ -2495,6 +2487,17 @@ namespace secretary {
                 }
                 else {
                     return ((incorectRow[])(base.GetChildRows(this.Table.ChildRelations["FK__incorect__user_i__787EE5A0"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public receivedRow[] GetreceivedRows() {
+                if ((this.Table.ChildRelations["FK__received__user_i__02FC7413"] == null)) {
+                    return new receivedRow[0];
+                }
+                else {
+                    return ((receivedRow[])(base.GetChildRows(this.Table.ChildRelations["FK__received__user_i__02FC7413"])));
                 }
             }
         }
@@ -3088,8 +3091,6 @@ namespace secretary.secretaryDataSet1TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "received";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("login_account", "login_account");
-            tableMapping.ColumnMappings.Add("password_account", "password_account");
             tableMapping.ColumnMappings.Add("license", "license");
             tableMapping.ColumnMappings.Add("FIO", "FIO");
             tableMapping.ColumnMappings.Add("date_creation", "date_creation");
@@ -3106,13 +3107,12 @@ namespace secretary.secretaryDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("specialization_2", "specialization_2");
             tableMapping.ColumnMappings.Add("specialization_3", "specialization_3");
             tableMapping.ColumnMappings.Add("note", "note");
+            tableMapping.ColumnMappings.Add("user_id", "user_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[received] ([login_account], [password_account], [license], [FIO], [date_creation], [application_status], [passport], [FIO_mom], [FIO_ded], [INN], [snils], [score], [photo_certificate], [photo], [specialization_1], [specialization_2], [specialization_3], [note]) VALUES (@login_account, @password_account, @license, @FIO, @date_creation, @application_status, @passport, @FIO_mom, @FIO_ded, @INN, @snils, @score, @photo_certificate, @photo, @specialization_1, @specialization_2, @specialization_3, @note)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [received] ([license], [FIO], [date_creation], [application_status], [passport], [FIO_mom], [FIO_ded], [INN], [snils], [score], [photo_certificate], [photo], [specialization_1], [specialization_2], [specialization_3], [note], [user_id]) VALUES (@license, @FIO, @date_creation, @application_status, @passport, @FIO_mom, @FIO_ded, @INN, @snils, @score, @photo_certificate, @photo, @specialization_1, @specialization_2, @specialization_3, @note, @user_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login_account", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login_account", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password_account", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password_account", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@license", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "license", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_creation", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_creation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3129,6 +3129,7 @@ namespace secretary.secretaryDataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@specialization_2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "specialization_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@specialization_3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "specialization_3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@note", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3144,10 +3145,9 @@ namespace secretary.secretaryDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, login_account, password_account, license, FIO, date_creation, applicat" +
-                "ion_status, passport, FIO_mom, FIO_ded, INN, snils, score, photo_certificate, ph" +
-                "oto, specialization_1, specialization_2, specialization_3, note FROM dbo.receive" +
-                "d";
+            this._commandCollection[0].CommandText = "SELECT id, license, FIO, date_creation, application_status, passport, FIO_mom, FI" +
+                "O_ded, INN, snils, score, photo_certificate, photo, specialization_1, specializa" +
+                "tion_2, specialization_3, note, user_id FROM received";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3209,8 +3209,6 @@ namespace secretary.secretaryDataSet1TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    string login_account, 
-                    string password_account, 
                     global::System.Nullable<bool> license, 
                     string FIO, 
                     global::System.Nullable<global::System.DateTime> date_creation, 
@@ -3226,105 +3224,95 @@ namespace secretary.secretaryDataSet1TableAdapters {
                     string specialization_1, 
                     string specialization_2, 
                     string specialization_3, 
-                    string note) {
-            if ((login_account == null)) {
-                throw new global::System.ArgumentNullException("login_account");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(login_account));
-            }
-            if ((password_account == null)) {
-                throw new global::System.ArgumentNullException("password_account");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(password_account));
-            }
+                    string note, 
+                    int user_id) {
             if ((license.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(license.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(license.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((FIO == null)) {
                 throw new global::System.ArgumentNullException("FIO");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FIO));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FIO));
             }
             if ((date_creation.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(date_creation.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(date_creation.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((application_status == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(application_status));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(application_status));
             }
             if ((passport == null)) {
                 throw new global::System.ArgumentNullException("passport");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(passport));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(passport));
             }
             if ((FIO_mom == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(FIO_mom));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FIO_mom));
             }
             if ((FIO_ded == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(FIO_ded));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(FIO_ded));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(INN));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(snils));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(INN));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(snils));
             if ((score == null)) {
                 throw new global::System.ArgumentNullException("score");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(score));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(score));
             }
             if ((photo_certificate == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(photo_certificate));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(photo_certificate));
             }
             if ((photo == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(photo));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(photo));
             }
             if ((specialization_1 == null)) {
                 throw new global::System.ArgumentNullException("specialization_1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(specialization_1));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(specialization_1));
             }
             if ((specialization_2 == null)) {
                 throw new global::System.ArgumentNullException("specialization_2");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(specialization_2));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(specialization_2));
             }
             if ((specialization_3 == null)) {
                 throw new global::System.ArgumentNullException("specialization_3");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(specialization_3));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(specialization_3));
             }
             if ((note == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(note));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(note));
             }
+            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(user_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

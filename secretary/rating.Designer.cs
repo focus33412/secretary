@@ -32,15 +32,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBoxSpecialization3 = new System.Windows.Forms.ComboBox();
+            this.incorectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.secretaryDataSet1 = new secretary.secretaryDataSet1();
+            this.comboBoxSpecialization2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSpecialization1 = new System.Windows.Forms.ComboBox();
             this.incorectDataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.secretaryDataSet1 = new secretary.secretaryDataSet1();
-            this.incorectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.back = new System.Windows.Forms.Button();
             this.incorectTableAdapter = new secretary.secretaryDataSet1TableAdapters.incorectTableAdapter();
             this.tableAdapterManager = new secretary.secretaryDataSet1TableAdapters.TableAdapterManager();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginaccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordaccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licenseDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datecreationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,15 +58,11 @@
             this.specialization2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specialization3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.back = new System.Windows.Forms.Button();
-            this.comboBoxSpecialization1 = new System.Windows.Forms.ComboBox();
-            this.comboBoxSpecialization2 = new System.Windows.Forms.ComboBox();
-            this.comboBoxSpecialization3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incorectDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.secretaryDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.incorectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secretaryDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incorectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,14 +102,48 @@
             this.panel2.Size = new System.Drawing.Size(808, 445);
             this.panel2.TabIndex = 3;
             // 
+            // comboBoxSpecialization3
+            // 
+            this.comboBoxSpecialization3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_3", true));
+            this.comboBoxSpecialization3.FormattingEnabled = true;
+            this.comboBoxSpecialization3.Location = new System.Drawing.Point(592, 405);
+            this.comboBoxSpecialization3.Name = "comboBoxSpecialization3";
+            this.comboBoxSpecialization3.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSpecialization3.TabIndex = 59;
+            // 
+            // incorectBindingSource
+            // 
+            this.incorectBindingSource.DataMember = "incorect";
+            this.incorectBindingSource.DataSource = this.secretaryDataSet1;
+            // 
+            // secretaryDataSet1
+            // 
+            this.secretaryDataSet1.DataSetName = "secretaryDataSet1";
+            this.secretaryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBoxSpecialization2
+            // 
+            this.comboBoxSpecialization2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_2", true));
+            this.comboBoxSpecialization2.FormattingEnabled = true;
+            this.comboBoxSpecialization2.Location = new System.Drawing.Point(306, 405);
+            this.comboBoxSpecialization2.Name = "comboBoxSpecialization2";
+            this.comboBoxSpecialization2.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSpecialization2.TabIndex = 58;
+            // 
+            // comboBoxSpecialization1
+            // 
+            this.comboBoxSpecialization1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_1", true));
+            this.comboBoxSpecialization1.FormattingEnabled = true;
+            this.comboBoxSpecialization1.Location = new System.Drawing.Point(98, 406);
+            this.comboBoxSpecialization1.Name = "comboBoxSpecialization1";
+            this.comboBoxSpecialization1.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSpecialization1.TabIndex = 57;
+            // 
             // incorectDataGridView
             // 
             this.incorectDataGridView.AutoGenerateColumns = false;
             this.incorectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.incorectDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.loginaccountDataGridViewTextBoxColumn,
-            this.passwordaccountDataGridViewTextBoxColumn,
             this.licenseDataGridViewCheckBoxColumn,
             this.fIODataGridViewTextBoxColumn,
             this.datecreationDataGridViewTextBoxColumn,
@@ -145,142 +176,6 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "все";
             // 
-            // secretaryDataSet1
-            // 
-            this.secretaryDataSet1.DataSetName = "secretaryDataSet1";
-            this.secretaryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // incorectBindingSource
-            // 
-            this.incorectBindingSource.DataMember = "incorect";
-            this.incorectBindingSource.DataSource = this.secretaryDataSet1;
-            // 
-            // incorectTableAdapter
-            // 
-            this.incorectTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.incorectTableAdapter = this.incorectTableAdapter;
-            this.tableAdapterManager.receivedTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = secretary.secretaryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // loginaccountDataGridViewTextBoxColumn
-            // 
-            this.loginaccountDataGridViewTextBoxColumn.DataPropertyName = "login_account";
-            this.loginaccountDataGridViewTextBoxColumn.HeaderText = "login_account";
-            this.loginaccountDataGridViewTextBoxColumn.Name = "loginaccountDataGridViewTextBoxColumn";
-            // 
-            // passwordaccountDataGridViewTextBoxColumn
-            // 
-            this.passwordaccountDataGridViewTextBoxColumn.DataPropertyName = "password_account";
-            this.passwordaccountDataGridViewTextBoxColumn.HeaderText = "password_account";
-            this.passwordaccountDataGridViewTextBoxColumn.Name = "passwordaccountDataGridViewTextBoxColumn";
-            // 
-            // licenseDataGridViewCheckBoxColumn
-            // 
-            this.licenseDataGridViewCheckBoxColumn.DataPropertyName = "license";
-            this.licenseDataGridViewCheckBoxColumn.HeaderText = "license";
-            this.licenseDataGridViewCheckBoxColumn.Name = "licenseDataGridViewCheckBoxColumn";
-            // 
-            // fIODataGridViewTextBoxColumn
-            // 
-            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
-            this.fIODataGridViewTextBoxColumn.HeaderText = "FIO";
-            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
-            // 
-            // datecreationDataGridViewTextBoxColumn
-            // 
-            this.datecreationDataGridViewTextBoxColumn.DataPropertyName = "date_creation";
-            this.datecreationDataGridViewTextBoxColumn.HeaderText = "date_creation";
-            this.datecreationDataGridViewTextBoxColumn.Name = "datecreationDataGridViewTextBoxColumn";
-            // 
-            // applicationstatusDataGridViewTextBoxColumn
-            // 
-            this.applicationstatusDataGridViewTextBoxColumn.DataPropertyName = "application_status";
-            this.applicationstatusDataGridViewTextBoxColumn.HeaderText = "application_status";
-            this.applicationstatusDataGridViewTextBoxColumn.Name = "applicationstatusDataGridViewTextBoxColumn";
-            // 
-            // passportDataGridViewTextBoxColumn
-            // 
-            this.passportDataGridViewTextBoxColumn.DataPropertyName = "passport";
-            this.passportDataGridViewTextBoxColumn.HeaderText = "passport";
-            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
-            // 
-            // fIOmomDataGridViewTextBoxColumn
-            // 
-            this.fIOmomDataGridViewTextBoxColumn.DataPropertyName = "FIO_mom";
-            this.fIOmomDataGridViewTextBoxColumn.HeaderText = "FIO_mom";
-            this.fIOmomDataGridViewTextBoxColumn.Name = "fIOmomDataGridViewTextBoxColumn";
-            // 
-            // fIOdedDataGridViewTextBoxColumn
-            // 
-            this.fIOdedDataGridViewTextBoxColumn.DataPropertyName = "FIO_ded";
-            this.fIOdedDataGridViewTextBoxColumn.HeaderText = "FIO_ded";
-            this.fIOdedDataGridViewTextBoxColumn.Name = "fIOdedDataGridViewTextBoxColumn";
-            // 
-            // iNNDataGridViewTextBoxColumn
-            // 
-            this.iNNDataGridViewTextBoxColumn.DataPropertyName = "INN";
-            this.iNNDataGridViewTextBoxColumn.HeaderText = "INN";
-            this.iNNDataGridViewTextBoxColumn.Name = "iNNDataGridViewTextBoxColumn";
-            // 
-            // snilsDataGridViewTextBoxColumn
-            // 
-            this.snilsDataGridViewTextBoxColumn.DataPropertyName = "snils";
-            this.snilsDataGridViewTextBoxColumn.HeaderText = "snils";
-            this.snilsDataGridViewTextBoxColumn.Name = "snilsDataGridViewTextBoxColumn";
-            // 
-            // scoreDataGridViewTextBoxColumn
-            // 
-            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "score";
-            this.scoreDataGridViewTextBoxColumn.HeaderText = "score";
-            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
-            // 
-            // photocertificateDataGridViewTextBoxColumn
-            // 
-            this.photocertificateDataGridViewTextBoxColumn.DataPropertyName = "photo_certificate";
-            this.photocertificateDataGridViewTextBoxColumn.HeaderText = "photo_certificate";
-            this.photocertificateDataGridViewTextBoxColumn.Name = "photocertificateDataGridViewTextBoxColumn";
-            // 
-            // photoDataGridViewTextBoxColumn
-            // 
-            this.photoDataGridViewTextBoxColumn.DataPropertyName = "photo";
-            this.photoDataGridViewTextBoxColumn.HeaderText = "photo";
-            this.photoDataGridViewTextBoxColumn.Name = "photoDataGridViewTextBoxColumn";
-            // 
-            // specialization1DataGridViewTextBoxColumn
-            // 
-            this.specialization1DataGridViewTextBoxColumn.DataPropertyName = "specialization_1";
-            this.specialization1DataGridViewTextBoxColumn.HeaderText = "specialization_1";
-            this.specialization1DataGridViewTextBoxColumn.Name = "specialization1DataGridViewTextBoxColumn";
-            // 
-            // specialization2DataGridViewTextBoxColumn
-            // 
-            this.specialization2DataGridViewTextBoxColumn.DataPropertyName = "specialization_2";
-            this.specialization2DataGridViewTextBoxColumn.HeaderText = "specialization_2";
-            this.specialization2DataGridViewTextBoxColumn.Name = "specialization2DataGridViewTextBoxColumn";
-            // 
-            // specialization3DataGridViewTextBoxColumn
-            // 
-            this.specialization3DataGridViewTextBoxColumn.DataPropertyName = "specialization_3";
-            this.specialization3DataGridViewTextBoxColumn.HeaderText = "specialization_3";
-            this.specialization3DataGridViewTextBoxColumn.Name = "specialization3DataGridViewTextBoxColumn";
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "note";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            // 
             // back
             // 
             this.back.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -293,32 +188,142 @@
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // comboBoxSpecialization1
+            // incorectTableAdapter
             // 
-            this.comboBoxSpecialization1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_1", true));
-            this.comboBoxSpecialization1.FormattingEnabled = true;
-            this.comboBoxSpecialization1.Location = new System.Drawing.Point(98, 406);
-            this.comboBoxSpecialization1.Name = "comboBoxSpecialization1";
-            this.comboBoxSpecialization1.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSpecialization1.TabIndex = 57;
+            this.incorectTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBoxSpecialization2
+            // tableAdapterManager
             // 
-            this.comboBoxSpecialization2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_2", true));
-            this.comboBoxSpecialization2.FormattingEnabled = true;
-            this.comboBoxSpecialization2.Location = new System.Drawing.Point(306, 405);
-            this.comboBoxSpecialization2.Name = "comboBoxSpecialization2";
-            this.comboBoxSpecialization2.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSpecialization2.TabIndex = 58;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.incorectTableAdapter = this.incorectTableAdapter;
+            this.tableAdapterManager.receivedTableAdapter = null;
+            this.tableAdapterManager.registerTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = secretary.secretaryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // comboBoxSpecialization3
+            // licenseDataGridViewCheckBoxColumn
             // 
-            this.comboBoxSpecialization3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "specialization_3", true));
-            this.comboBoxSpecialization3.FormattingEnabled = true;
-            this.comboBoxSpecialization3.Location = new System.Drawing.Point(592, 405);
-            this.comboBoxSpecialization3.Name = "comboBoxSpecialization3";
-            this.comboBoxSpecialization3.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSpecialization3.TabIndex = 59;
+            this.licenseDataGridViewCheckBoxColumn.DataPropertyName = "лицензия";
+            this.licenseDataGridViewCheckBoxColumn.HeaderText = "license";
+            this.licenseDataGridViewCheckBoxColumn.Name = "licenseDataGridViewCheckBoxColumn";
+            this.licenseDataGridViewCheckBoxColumn.Width = 60;
+            // 
+            // fIODataGridViewTextBoxColumn
+            // 
+            this.fIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
+            this.fIODataGridViewTextBoxColumn.Width = 59;
+            // 
+            // datecreationDataGridViewTextBoxColumn
+            // 
+            this.datecreationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.datecreationDataGridViewTextBoxColumn.DataPropertyName = "date_creation";
+            this.datecreationDataGridViewTextBoxColumn.HeaderText = "дата создания";
+            this.datecreationDataGridViewTextBoxColumn.Name = "datecreationDataGridViewTextBoxColumn";
+            this.datecreationDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // applicationstatusDataGridViewTextBoxColumn
+            // 
+            this.applicationstatusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.applicationstatusDataGridViewTextBoxColumn.DataPropertyName = "application_status";
+            this.applicationstatusDataGridViewTextBoxColumn.HeaderText = "статус расмотрения";
+            this.applicationstatusDataGridViewTextBoxColumn.Name = "applicationstatusDataGridViewTextBoxColumn";
+            this.applicationstatusDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // passportDataGridViewTextBoxColumn
+            // 
+            this.passportDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.passportDataGridViewTextBoxColumn.DataPropertyName = "passport";
+            this.passportDataGridViewTextBoxColumn.HeaderText = "номер паспорта";
+            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
+            this.passportDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // fIOmomDataGridViewTextBoxColumn
+            // 
+            this.fIOmomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fIOmomDataGridViewTextBoxColumn.DataPropertyName = "FIO_mom";
+            this.fIOmomDataGridViewTextBoxColumn.HeaderText = "ФИО матери";
+            this.fIOmomDataGridViewTextBoxColumn.Name = "fIOmomDataGridViewTextBoxColumn";
+            this.fIOmomDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // fIOdedDataGridViewTextBoxColumn
+            // 
+            this.fIOdedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fIOdedDataGridViewTextBoxColumn.DataPropertyName = "FIO_ded";
+            this.fIOdedDataGridViewTextBoxColumn.HeaderText = "ФИО отца";
+            this.fIOdedDataGridViewTextBoxColumn.Name = "fIOdedDataGridViewTextBoxColumn";
+            this.fIOdedDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // iNNDataGridViewTextBoxColumn
+            // 
+            this.iNNDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iNNDataGridViewTextBoxColumn.DataPropertyName = "INN";
+            this.iNNDataGridViewTextBoxColumn.HeaderText = "Номер ИНН";
+            this.iNNDataGridViewTextBoxColumn.Name = "iNNDataGridViewTextBoxColumn";
+            this.iNNDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // snilsDataGridViewTextBoxColumn
+            // 
+            this.snilsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.snilsDataGridViewTextBoxColumn.DataPropertyName = "snils";
+            this.snilsDataGridViewTextBoxColumn.HeaderText = "номер снилс";
+            this.snilsDataGridViewTextBoxColumn.Name = "snilsDataGridViewTextBoxColumn";
+            this.snilsDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // scoreDataGridViewTextBoxColumn
+            // 
+            this.scoreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "score";
+            this.scoreDataGridViewTextBoxColumn.HeaderText = "средний бал";
+            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
+            this.scoreDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // photocertificateDataGridViewTextBoxColumn
+            // 
+            this.photocertificateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.photocertificateDataGridViewTextBoxColumn.DataPropertyName = "photo_certificate";
+            this.photocertificateDataGridViewTextBoxColumn.HeaderText = "фото атестата";
+            this.photocertificateDataGridViewTextBoxColumn.Name = "photocertificateDataGridViewTextBoxColumn";
+            this.photocertificateDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // photoDataGridViewTextBoxColumn
+            // 
+            this.photoDataGridViewTextBoxColumn.DataPropertyName = "photo";
+            this.photoDataGridViewTextBoxColumn.HeaderText = "фотография";
+            this.photoDataGridViewTextBoxColumn.Name = "photoDataGridViewTextBoxColumn";
+            // 
+            // specialization1DataGridViewTextBoxColumn
+            // 
+            this.specialization1DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.specialization1DataGridViewTextBoxColumn.DataPropertyName = "specialization_1";
+            this.specialization1DataGridViewTextBoxColumn.HeaderText = "направление 1";
+            this.specialization1DataGridViewTextBoxColumn.Name = "specialization1DataGridViewTextBoxColumn";
+            this.specialization1DataGridViewTextBoxColumn.Width = 98;
+            // 
+            // specialization2DataGridViewTextBoxColumn
+            // 
+            this.specialization2DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.specialization2DataGridViewTextBoxColumn.DataPropertyName = "specialization_2";
+            this.specialization2DataGridViewTextBoxColumn.HeaderText = "направление 2";
+            this.specialization2DataGridViewTextBoxColumn.Name = "specialization2DataGridViewTextBoxColumn";
+            this.specialization2DataGridViewTextBoxColumn.Width = 98;
+            // 
+            // specialization3DataGridViewTextBoxColumn
+            // 
+            this.specialization3DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.specialization3DataGridViewTextBoxColumn.DataPropertyName = "specialization_3";
+            this.specialization3DataGridViewTextBoxColumn.HeaderText = "направление 3";
+            this.specialization3DataGridViewTextBoxColumn.Name = "specialization3DataGridViewTextBoxColumn";
+            this.specialization3DataGridViewTextBoxColumn.Width = 98;
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "примечание";
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.noteDataGridViewTextBoxColumn.Width = 93;
             // 
             // rating
             // 
@@ -334,9 +339,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incorectDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.secretaryDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incorectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secretaryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incorectDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,9 +357,12 @@
         private System.Windows.Forms.BindingSource incorectBindingSource;
         private secretaryDataSet1TableAdapters.incorectTableAdapter incorectTableAdapter;
         private secretaryDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginaccountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordaccountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.ComboBox comboBoxSpecialization1;
+        private System.Windows.Forms.ComboBox comboBoxSpecialization3;
+        private System.Windows.Forms.ComboBox comboBoxSpecialization2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn licenseDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datecreationDataGridViewTextBoxColumn;
@@ -371,9 +379,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn specialization2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialization3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button back;
-        private System.Windows.Forms.ComboBox comboBoxSpecialization1;
-        private System.Windows.Forms.ComboBox comboBoxSpecialization3;
-        private System.Windows.Forms.ComboBox comboBoxSpecialization2;
     }
 }
