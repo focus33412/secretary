@@ -45,6 +45,7 @@
             System.Windows.Forms.Label licenseLabel;
             System.Windows.Forms.Label date_creationLabel;
             System.Windows.Forms.Label application_statusLabel;
+            System.Windows.Forms.Label user_idLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -80,6 +81,7 @@
             this.photo_certificateTextBox = new System.Windows.Forms.TextBox();
             this.incorectTableAdapter = new secretary.secretaryDataSet1TableAdapters.incorectTableAdapter();
             this.tableAdapterManager = new secretary.secretaryDataSet1TableAdapters.TableAdapterManager();
+            this.user_idTextBox = new System.Windows.Forms.TextBox();
             fIOLabel = new System.Windows.Forms.Label();
             passportLabel = new System.Windows.Forms.Label();
             fIO_momLabel = new System.Windows.Forms.Label();
@@ -96,6 +98,7 @@
             licenseLabel = new System.Windows.Forms.Label();
             date_creationLabel = new System.Windows.Forms.Label();
             application_statusLabel = new System.Windows.Forms.Label();
+            user_idLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incorectBindingSource)).BeginInit();
@@ -273,6 +276,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(user_idLabel);
+            this.panel2.Controls.Add(this.user_idTextBox);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.licenseCheckBox);
             this.panel2.Controls.Add(this.fIOTextBox);
@@ -607,12 +612,31 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.incorectTableAdapter = this.incorectTableAdapter;
             this.tableAdapterManager.receivedTableAdapter = null;
+            this.tableAdapterManager.registerTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = secretary.secretaryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // user_idLabel
+            // 
+            user_idLabel.AutoSize = true;
+            user_idLabel.Location = new System.Drawing.Point(185, 393);
+            user_idLabel.Name = "user_idLabel";
+            user_idLabel.Size = new System.Drawing.Size(41, 13);
+            user_idLabel.TabIndex = 70;
+            user_idLabel.Text = "user id:";
+            // 
+            // user_idTextBox
+            // 
+            this.user_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incorectBindingSource, "user_id", true));
+            this.user_idTextBox.Location = new System.Drawing.Point(232, 390);
+            this.user_idTextBox.Name = "user_idTextBox";
+            this.user_idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.user_idTextBox.TabIndex = 71;
             // 
             // secret
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(808, 478);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -671,5 +695,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox user_idTextBox;
     }
 }

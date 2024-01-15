@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Регистрация</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Регистрация</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#" role="button">Контакты</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Регистрация</h2>
+                    <h3>Пожалуйста, введите ваши данные</h3>
+                </hgroup>
+                <form action="/register" method="post">
+                    <label for="login_user">Логин (Email):</label>
+                    <input type="email" id="login_user" name="login_user" required />
+                    <label for="password_user">Пароль:</label>
+                    <input type="password" id="password_user" name="password_user" required />
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+                <p>Уже есть аккаунт? <a href="/">Войти</a></p>
+            </section>
+        </div>
+    </main>
+    <footer class="container">
+        <small><a href="#">Политика конфиденциальности</a> • <a href="#">Условия использования</a></small>
+    </footer>
+</body>
+</html>

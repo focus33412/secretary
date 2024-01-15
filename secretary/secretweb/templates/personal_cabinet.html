@@ -3,11 +3,81 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Личный кабинет</title>
+    <style>
+        .user-requests {
+            padding: 10px;
+        }
+
+        .user-request {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+            .user-request:last-child {
+                border-bottom: none;
+            }
+
+        .no-requests {
+            color: grey;
+            font-style: italic;
+        }
+
+        .submit-request-button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: lightblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Личный кабинет</h1>
-    <p>Добро пожаловать, {{ fio.decode('utf-8') }}!</p>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Личный кабинет</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#requests">Заявки</a></li>
+            <li><a href="#profile">Профиль</a></li>
+            <li><a href="{{ url_for('logout') }}" role="button">Выход</a></li>
+        </ul>
+    </nav>
 
+    <main class="container">
+        <h1>Добро пожаловать, {{ fio|safe }}!</h1>
+
+        <section id="requests">
+            <h2>Заявки пользователя<a href="{{ url_for('submit_request') }}" class="submit-request-button">Подать заявку</a></h2>
+            <div class="user-requests">
+                {% for request in user_requests %}
+                <div class="user-request">
+                    <p>FIO: {{ request.FIO }}</p>
+                    <p>Дата создания: {{ request.date_creation }}</p>
+                    <p>Дата создания: {{ request.date_creation }}</p>
+                    <p>Статус заявки: {{ request.application_status }}</p>
+                    <p>Паспорт: {{ request.passport }}</p>
+                    <p>FIO мамы: {{ request.FIO_mom }}</p>
+                    <p>FIO папы: {{ request.FIO_ded }}</p>
+                    <p>INN: {{ request.INN }}</p>
+                    <p>SNILS: {{ request.snils }}</p>
+                    <p>средний бал: {{ request.score }}</p>
+                    <p>Фото сертификата: {{ request.photo_certificate }}</p>
+                    <p>Фото: {{ request.photo }}</p>
+                    <p>Специализация 1: {{ request.specialization_1 }}</p>
+                    <p>Специализация 2: {{ request.specialization_2 }}</p>
+                    <p>Специализация 3: {{ request.specialization_3 }}</p>
+
+                </div>
+                {% else %}
+                <p class="no-requests">Еще нет заявок</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
 </body>
 </html>

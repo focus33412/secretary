@@ -14,7 +14,7 @@
         </ul>
         <ul>
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Регистрация</a></li>
+            <li><a href="{{ url_for('register') }}">Регистрация</a></li>
         </ul>
     </nav>
     <main class="container">
@@ -24,8 +24,8 @@
                     <h2>Вход в систему</h2>
                 </hgroup>
                 <form method="post" action="{{ url_for('login') }}">
-                    <label for="username">Логин:</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="email">Электронная почта:</label>
+                    <input type="text" id="email" name="email" required>
                     <label for="password">Пароль:</label>
                     <input type="password" id="password" name="password" required>
                     <button type="button" onclick="togglePasswordVisibility()">Показать/Скрыть пароль</button>
@@ -34,7 +34,8 @@
                     <p style="color: red;">{{ error_message }}</p>
                     {% endif %}
                 </form>
-                <a href="#">Регистрация</a>
+
+                <a href="{{ url_for('register') }}">Регистрация</a>
             </section>
         </div>
     </main>
