@@ -1,0 +1,7 @@
+create table register (
+id int identity(1,1) not null,
+email varchar(250) not null,
+password varchar(250) not null
+);
+
+INSERT INTO register (email, password) VALUES ('adam', 'adam');

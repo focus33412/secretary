@@ -1,0 +1,21 @@
+create table incorect (
+id int identity(1,1) not null,
+user_id int not null,
+license bit,
+FIO varchar(250) not null,
+date_creation smalldatetime,
+application_status varchar(50) DEFAULT 'На рассмотрении',
+passport varchar(50) not null,
+FIO_mom varchar(250),
+FIO_ded varchar(250),
+INN int not null,
+snils int not null,
+score varchar(50) not null,
+photo_certificate varchar(250),
+photo varchar(250),
+specialization_1 varchar(250) not null,
+specialization_2 varchar(250) not null,
+specialization_3 varchar(250) not null,
+note varchar(250),
+FOREIGN KEY (user_id) REFERENCES register(id)
+);
